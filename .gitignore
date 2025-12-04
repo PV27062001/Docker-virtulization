@@ -1,0 +1,51 @@
+# Java/Gradle
+.gradle/
+build/
+*.jar
+*.war
+*.ear
+*.class
+.classpath
+.project
+.settings/
+*.log
+out/
+
+# Spring Boot
+.springBeans
+.sts4-cache/
+HELP.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Node.js / NPM
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+dist/
+
+# Docker
+*.docker-compose.override.yml
+
+# OS specific
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.*.local
+
+# Miscellaneous
+*.tmp
+*.bak
+*.swp
