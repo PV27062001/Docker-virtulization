@@ -10,7 +10,8 @@ function App() {
   useEffect(() => {
     const fetchMessage = async () => {
       try {
-        const response = await fetch('http://localhost:8080/message');
+        const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080/message';
+        const response = await fetch(backendUrl);
         if (!response.ok) {
           throw new Error('Failed to fetch message');
         }

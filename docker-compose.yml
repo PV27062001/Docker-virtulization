@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./JAVA/springForDocker
+    container_name: spring_api
+    ports:
+      - 8080:8080
+    networks:
+      - app-net
+  
+  frontend:
+    build: ./virtulization
+    container_name: react_ui
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:8080/message
+    networks:
+      - app-net
+
+  html:
+    build: "./HTML/Dynamic page/to-do"
+    container_name: html_server
+    volumes:
+      - ./HTML:/usr/share/nginx/html
+    ports:
+      - 5000:80
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
